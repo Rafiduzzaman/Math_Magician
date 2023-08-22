@@ -128,8 +128,8 @@ https:///
 
 👤 **Md.Rafiduzzaman**
 
-- GitHub: [@Rdzaman20000](https://github.com/Rafiduzzaman)
-- Twitter: [@99_spectre](https://twitter.com/rdzaman187468)
+- GitHub: [@Rafiduzzaman](https://github.com/Rafiduzzaman)
+- Twitter: [@rdzaman](https://twitter.com/rdzaman187468)
 - LinkedIn: [@md-rafiduzzaman-nahin](https://www.linkedin.com/in/md-rafiduzzaman-nahin-7431ab1b4/)
 
 
