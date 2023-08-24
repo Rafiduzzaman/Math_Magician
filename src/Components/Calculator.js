@@ -1,5 +1,5 @@
-/* eslint-disable react/prop-types */
 import React from 'react';
+import PropTypes from 'prop-types';
 import './Calculator.css';
 
 const Button = ({ label, span, isOperator }) => (
@@ -42,5 +42,13 @@ const Calculator = () => (
     </div>
   </div>
 );
-
+Button.propTypes = {
+  label: PropTypes.string.isRequired,
+  span: PropTypes.bool,
+  isOperator: PropTypes.bool,
+};
+Button.defaultProps = {
+  span: false, // Set default value for span prop
+  isOperator: false, // Set default value for isOperator prop
+};
 export default Calculator;
