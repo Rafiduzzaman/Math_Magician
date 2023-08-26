@@ -35,15 +35,32 @@ const Calculator = () => {
     operation: null,
   });
 
+  const [currentOperation, setCurrentOperation] = useState('');
   const handleButtonClick = (buttonName) => {
     const newData = calculate(calculatorData, buttonName);
+
+    if (buttonName === 'AC') {
+      setCurrentOperation('');
+      setCalculatorData({
+        total: null,
+        next: null,
+        operation: null,
+      });
+    } else if (buttonName === '=' && newData.total !== null) {
+      setCurrentOperation('');
+    } else if (buttonName === '+/-') {
+      setCurrentOperation(`-${currentOperation}`);
+    } else {
+      setCurrentOperation((prevOperation) => prevOperation + buttonName);
+    }
+
     setCalculatorData(newData);
   };
 
   return (
     <div className="calculator">
       <div className="calculator-display">
-        {calculatorData.next || calculatorData.total || '0'}
+        {currentOperation || calculatorData.next || calculatorData.total || '0'}
       </div>
       <div className="calculator-grid">
         {/* Row 1 */}
