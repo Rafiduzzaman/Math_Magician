@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 
 const QuoteDisplay = () => {
   const [quote, setQuote] = useState('');
+  const [author, setAuthor] = useState('');
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
 
@@ -15,8 +16,10 @@ const QuoteDisplay = () => {
       .then((data) => {
         if (data.length > 0) {
           setQuote(data[0].quote);
+          setAuthor(data[0].author); // Set the author's name
         } else {
           setQuote('No quotes found in this category.');
+          setAuthor('');
         }
         setLoading(false);
       })
@@ -41,7 +44,15 @@ const QuoteDisplay = () => {
 
   return (
     <div className="quote-display">
-      <p>{quote}</p>
+      <p className="quote-text">{quote}</p>
+      {author && (
+      <p className="author-text">
+        -
+        {author}
+      </p>
+      )}
+      {' '}
+      {/* Display author if available */}
     </div>
   );
 };
